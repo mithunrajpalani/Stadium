@@ -1,0 +1,67 @@
+/* App.css — Responsive layout rules for StadiumIQ */
+
+/* Main app grid: two-panel layout */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1200px) {
+  .main-grid {
+    grid-template-columns: 1fr 320px;
+  }
+}
+
+@media (max-width: 960px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+  .sidebar-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Metrics bar: 5 cols → 3 cols on tablet → 2 on mobile */
+.metrics-bar-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 1100px) { .metrics-bar-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px)  { .metrics-bar-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* Occupancy grid: 2 cols always inside card */
+.occupancy-outer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 700px) {
+  .occupancy-outer-grid { grid-template-columns: 1fr; }
+}
+
+/* Page wrapper */
+.page-wrap {
+  padding: 1.5rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+@media (max-width: 640px) {
+  .page-wrap { padding: 1rem; }
+}
+
+/* fadeSlideUp keyframes referenced from index.css */
